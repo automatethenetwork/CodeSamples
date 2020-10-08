@@ -28,7 +28,7 @@ pprint(networks)
 
 # Set NetworkId
 for network in networks:
-    if network['name'] == "DevNet Always On Read Only":
+    if network['name'] == "DevNet Sandbox ALWAYS ON":
         netId = network['id']
 # print(netId)
 
@@ -51,3 +51,5 @@ result = meraki.vlans.update_network_vlan(updatedVlan)
 # VERIFY
 vlans = meraki.vlans.get_network_vlans(netId)
 pprint(vlans)
+
+meraki.vlans.http_client.

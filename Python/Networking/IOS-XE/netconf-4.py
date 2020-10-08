@@ -28,9 +28,9 @@ netconf_filter = """
 """
 
 with manager.connect(host=router["host"], port=router["port"], username=router["username"], password=router["password"], hostkey_verify=False) as m:
-    for capability in m.server_capabilities:
-        print('*' * 50)
-        print(capability)
+    #for capability in m.server_capabilities:
+        #print('*' * 50)
+        #print(capability)
     # get the running config on the filtered out interface
     print('Connected')
     interface_netconf = m.get(netconf_filter)
@@ -57,4 +57,4 @@ op_state = interface_python["interfaces-state"]["interface"]
 print("Start")
 print(f"Name: {config['name']['#text']}")
 print(f"Description: {config['description']}")
-print(f"Pakcets In {op_state['statistics']['in-unicast-pkts']}")
+print(f"Packets In {op_state['statistics']['in-unicast-pkts']}")
